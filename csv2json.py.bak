@@ -1,0 +1,57 @@
+# CSV to JSON converter
+# Soomin K. Dec.12,2018
+# <F9> to run this python file in vim
+
+import json
+import os
+
+FILENAME = 'tokyo-Avg-2001'
+class Ext:
+    csv  = 'csv'
+    temp = 'temp'
+    json = 'json'
+
+def getFullPath(ext):
+    return 'data/' + FILENAME + '.' + ext
+
+# CSV: one column only, separated by /n
+# File Names
+
+# Metadata in the output JSON file
+# Filename should be in the format:
+# city-name-year, for example,
+# tokyo-Avg-2001
+metaData = FILENAME.split('-')
+
+# Read CSV file
+print('Input CSV file:', getFullPath(Ext.csv))
+with open(getFullPath(Ext.csv), 'r') as cf:
+    inData = cf.read().split('\n')
+print(len(inData), 'lines read')
+
+# Create a temp file to remove all the quotation characters in the JSON file
+with open(getFullPath(Ext.temp), 'w') as tf:
+    json.dump(inData, tf, ensure_ascii=False, separators=(',', ':'))
+
+with open(getFullPath(Ext.temp), 'r') as tf:
+    outData = tf.readline().replace('"', '')
+
+# Output the JSON file with the meta data
+print('Output JSON file:', getFullPath(Ext.json))
+with open(getFullPath(Ext.json), 'w') as jf:
+    jf.write('{"meta":{"city":"' + metaData[0] \
+                  + '","name":"' + metaData[1] \
+                  + '","year":'  + metaData[2] \
+                  + '},\n')
+    jf.write('"data":')
+    jf.write(outData)
+    jf.write('}')
+
+print('SUCCESS!')
+
+# Cleanup
+if os.path.exists(getFullPath(Ext.temp)):
+    os.remove(getFullPath(Ext.temp))
+else:
+    print(getFullPath(Ext.temp), ' - File not exist')
+
