@@ -7,6 +7,7 @@
 import csv
 import json
 import os
+import sys
 
 '''
 Downloaded data's 'csvName shoud be in the format:
@@ -70,13 +71,38 @@ TIPS
 $ ls -l tokyo-c-* | awk '{total += $5} END {print total/1024, "KB"}'
 $ ls -l tokyo-c-* | wc | awk '{print $1, "files"}'
 '''
+class Deco:
+    error     = '⚠️ '
+    startIcon = '🌦 '
+    csvIcon   = '🌡'
+    colIcon   = '📚'
+    rowIcon   = '📕'
+    yearIcon  = '☀️'
+    success   = 'SUCCESS!💋'
+    sizeHeadC = '.....................................................>'
+    sizeHeadR = '----------------------------------------------------->'
+    totalHead = '==>'
+
+def handleFileNotFoundError(f):
+    print(Deco.error, f, ' not found!')
+    sys.exit()
+
+class PathName:   # directory names for the data files
+    csv  = 'dataCSV/'
+    json = 'dataJSON/'
+
+if not os.path.exists(PathName.csv) or  \
+   not os.path.exists(PathName.json):
+    handleFileNotFoundError(PathName.csv + ' or ' + PathName.json)
 
 # List of downloaded CSV filenames (http://bit.ly/2Lh4qzF)
-csvNameList = [ \
-    'tokyo-1991', \
-    'tokyo-2001', \
-    'tokyo-2011', \
-    ]
+csvFileList = []
+################
+try:
+    csvFileList = [f for f in os.listdir(PathName.csv) \
+                     if os.path.isfile(PathName.csv + f) and not f.startswith('.')]
+except FileNotFoundError:
+    handleFileNotFoundError(PathName.csv)
 
 # Column names to be extracted
 colName = [ \
@@ -96,47 +122,41 @@ colName = [ \
 
 # colExtractList = [1,6,11,14,18,22,25,36,39,42,45,48]
 colExtractList = []  # automatically build the list of columns to be extracted
+###################
 for cx in range(1, len(colName)):  # exclude the 'Date' column at the index 0
     if colName[cx] is not None:
         colExtractList.append(cx)
 
-class Deco:
-    startIcon = '🌦 '
-    csvIcon   = '🌡'
-    colIcon   = '📚'
-    rowIcon   = '📕'
-    yearIcon  = '☀️'
-    success   = 'SUCCESS!💋'
-    sizeHead  = '----------------------------------------------------->'
-    totalHead = '=======>'
-
 def getKB(size):
     return str(round(size/1024, 1)) + ' KB'
 
-print(Deco.startIcon, 'TMA Data - Column # to be extracted:', colExtractList)
+def getYears(days):
+    return str(round(days/365.25, 2)) + ' years'
+
 
 #######################################################################
 ## Main Module
 def JMAMain(csvName):
     # Metadata in the output JSON file
-    metaData = csvName.split('-')
+    fname  = (csvName.split('.'))[0].split('-')
+    locDF  = fname[0]  # location Data from Filename
+    yearDF = fname[1]  # year Data from Filename
 
     class Ext:
-        csv  = 'csv'
         temp = 'temp'
         json = 'json'
 
     def getColName(col):
         return colName[colExtractList[col]]
 
-    def getFullPath(ext):
-        return 'dataCSV/' + csvName + '.' + ext
+    def getCsvPath():
+        return PathName.csv + csvName
 
-    def getFullPathOut(itemName, year=metaData[1]):
-        return 'dataJSON/' + metaData[0] + '-' \
-                           + itemName    + '-' \
-                           + year        + '.' \
-                           + Ext.json
+    def getFullPathOut(itemName, year=yearDF):
+        return PathName.json + locDF    + '-' \
+                             + itemName + '-' \
+                             + year     + '.' \
+                             + Ext.json
 
     def isCompactFormat(itemName):
         return itemName == 'c'
@@ -153,55 +173,55 @@ def JMAMain(csvName):
     rowDataList = []      # two-dimmensional array (per year)
     yearsList = []
 
-    def WriteListJson(itemName, dataList, year=metaData[1]):
+    def WriteListJson(itemName, dataList, year=yearDF):
         fnJson = getFullPathOut(itemName, year)
         # Create a temp file to remove all the quotation characters in the JSON file
-        '''
-        Unwanted quotation marks added when json.dump was called.
+        ''' Unwanted quotation marks added when json.dump was called.
         Since I couldn't find easy way to prevent this behavior added a post process after dumping.
-        Dump a temporary Json file and then apply some filters.
-        '''
+        Dump a temporary Json file and then apply some filters.  '''
         fnTemp = fnJson + '.' + Ext.temp
-        with open(fnTemp, 'w') as tf:
-            json.dump(dataList, tf, ensure_ascii=False, separators=(',', ':'))
+        try:
+            with open(fnTemp, 'w') as tf:
+                json.dump(dataList, tf, ensure_ascii=False, separators=(',', ':'))
+            with open(fnTemp, 'r') as tf:
+                outData = tf.readline().replace('"', '')
+                # if isCompactFormat(itemName):
+                #    outData = outData.replace('|0|', '||')     # nullify 0
+        except FileNotFoundError:
+            handleFileNotFoundError(fnTemp)
 
-        with open(fnTemp, 'r') as tf:
-            outData = tf.readline().replace('"', '')
-            # if isCompactFormat(itemName):
-            #    outData = outData.replace('|0|', '||')     # nullify 0
-
-        # Output the JSON file with the meta data
-        with open(fnJson, 'w') as jf:
-            jf.write('{"meta":{"location":"' + metaData[0] \
-                          + '","item":"'     + itemName    \
-                          + '","year":'      + year        \
-                          + '},\n')
-            jf.write('"data":')
-            jf.write(outData)
-            jf.write('}')
+        try:
+            # Output the JSON file with the meta data
+            with open(fnJson, 'w') as jf:
+                jf.write('{"meta":{"location":"' + locDF    \
+                              + '","item":"'     + itemName \
+                              + '","year":'      + year     \
+                              + '},\n')
+                jf.write('"data":')
+                jf.write(outData)
+                jf.write('}')
+        except FileNotFoundError:
+            handleFileNotFoundError(fnJson)
 
         # Cleanup
         if os.path.exists(fnTemp):
             os.remove(fnTemp)
         else:
             print(fnTemp, ' - File not exist')
-        
+
         szJson = os.path.getsize(fnJson)
         print(Deco.rowIcon if isCompactFormat(itemName) else Deco.colIcon, fnJson, \
               ' (', getKB(szJson), ')')  # ternary operator
         return szJson
 
     # Read CSV file
-    fnCsv = getFullPath(Ext.csv)
-    print(Deco.csvIcon, ' Source CSV:', fnCsv)
-    with open(fnCsv, 'r') as cf:
+    print(Deco.csvIcon, ' Source CSV:', getCsvPath())
+    daysJson = 0
+    with open(getCsvPath(), 'r') as cf:
         inData = csv.reader(cf, delimiter=',')
-        '''
-        Process CSV data
+        ''' Process CSV data
         1. Save to colDataList[c] per column (i.e. per item) for each daily data
-        2. Save to rowDataList[y] every column per day combining to a compact form, per year list
-        '''
-        days = 0
+        2. Save to rowDataList[y] every column per day combining to a compact form, per year list '''
         yrId = 0
         for row in inData:
             if '/' not in row[0]:   # skip header part (with no date)
@@ -219,28 +239,34 @@ def JMAMain(csvName):
                 yrId += 1
                 print(Deco.yearIcon, yearsList[len(yearsList)-1], end='')  # print out the year
             rowDataList[yrId-1].append(s)
-            days += 1
-    print('->Total', days, 'days read (', round(days/365.25, 2), 'years)')
+            daysJson += 1
+    print('->Total', daysJson, 'days (', getYears(daysJson), ')')
 
     szColJson = 0
     szRowJson = 0
     for col in range(len(colExtractList)):
         szColJson += WriteListJson(getColName(col), colDataList[col])
-    print(Deco.sizeHead, getKB(szColJson), ' in total.')
+    print(Deco.sizeHeadC, getKB(szColJson), ' in total.')
 
     for y in range(len(yearsList)):
         szRowJson += WriteListJson('c', rowDataList[y], yearsList[y])  #'c' for compact format
-    print(Deco.sizeHead, getKB(szRowJson), ' in total. ', Deco.success)
+    print(Deco.sizeHeadR, getKB(szRowJson), ' in total. ', Deco.success)
 
-    return szColJson, szRowJson   # construct a tuple
+    return szColJson, szRowJson, daysJson   # construct a tuple
 
 #######################################################################
-print('# of columns:', len(colName))
+print(Deco.startIcon, 'TMA Data - Column IDs to be extracted:', colExtractList, '(', len(colName), 'columns)')
 szColTotal = 0
 szRowTotal = 0
-for fn in csvNameList:
-    szC, szR = JMAMain(fn)
+daysTotal  = 0
+for fn in csvFileList:
+    szC, szR, d = JMAMain(fn)
     szColTotal += szC
     szRowTotal += szR
-print(Deco.totalHead, ' Column-wise   data:', getKB(szColTotal), ' in total.')
-print(Deco.totalHead, ' Daily compact data:', getKB(szRowTotal), ' in total.')
+    daysTotal  += d
+## REPORT statistics
+print(Deco.totalHead, 'Column-wise   data:', getKB(szColTotal), 'in total.')
+print(Deco.totalHead, 'Daily compact data:', getKB(szRowTotal), 'in total.', \
+      round(szRowTotal/daysTotal, 1), 'bytes/day (', \
+      getKB(szRowTotal/(daysTotal/365.25)), '/year) in average.')
+print(Deco.totalHead, daysTotal, ' days (', getYears(daysTotal), ') in total.')
