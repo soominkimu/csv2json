@@ -1,4 +1,7 @@
 .DS_Store
 bak/*
-dataCSV/tokyo-1*
+dataCSV/*
 dataJSON/*
+!dataCSV/tokyo-2*
+!dataJSON/*.txt
+
