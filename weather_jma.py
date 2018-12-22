@@ -1,12 +1,17 @@
-# CSV to JSON converter for Japanese Meteoroogical Agency data
+#!/usr/bin/env python3
+# CSV to JSON converter for Japanese Meteorological Agency data
 # Extracts single column from the multi-column CSV data
 # and save with meta data to a JSON file
 # Soomin K. Dec.12,2018
 # <F9> to run this python file in vim editor (need to set :nnoremap)
-# Requires python3
 # Repo: https://github.com/soominkimu/csv2json
 
 '''
+# Google Python Style Guide: https://google.github.io/styleguide/pyguide.html (snake_case)
+  module_name,       package_name,            ClassName,        method_name, ExceptionName,
+  function_name,     GLOBAL_CONSTANT_NAME,    global_var_name,
+  instance_var_name, function_parameter_name, local_var_name
+
 Downloaded data's 'csvName shoud be in the format:
 観測地点（都市名）-期間（始まりの年、10年単位、特に制約は無し）
 Output JSON filename will be:
@@ -21,11 +26,11 @@ https://www.data.jma.go.jp/gmd/risk/obsdl/index.php
 最高気温(℃)                    Max      1
 最低気温(℃)                    Min      6
 平均気温(℃)                    Avg     11
-降水量の合計(mm)               Rain    14  31.3%
+降水量の合計(mm)               Rain    14  31.3%  * 0->null
 .....................................................
 日照時間(時間)                 SolarT  18  since 1961
 合計全天日射量(MJ/㎡)          SolarE  22
-最深積雪(cm)                   Snow    25   0.5%
+最深積雪(cm)                   Snow    25   0.5%  * 0->null
 平均風速(m/s)                  Wind    36
 平均湿度(％)                   Humid   39
 平均雲量(10分比)               Cloud   42
@@ -33,6 +38,7 @@ https://www.data.jma.go.jp/gmd/risk/obsdl/index.php
 天気概況(昼：06時～18時)       StatD   45  since 1967/1/1
 天気概況(夜：18時～翌日06時)   StatN   48
 ------------------------------------------
+* 0->null: To save space, convert 0 to null
 
 Required Files (downloaded from 気象庁JMA)
 -----------------------------------------------
@@ -96,6 +102,10 @@ def handleFileNotFoundError(f):
     print(Deco.error, f, ' not found!')
     sys.exit()
 
+def handleCriticalError(msg):
+    print(Deco.error, msg)
+    sys.exit()
+
 class PathName:   # directory names for the data files
     csv  = 'dataCSV/'
     json = 'dataJSON/'
@@ -105,15 +115,15 @@ if not os.path.exists(PathName.csv) or  \
     handleFileNotFoundError(PathName.csv + ' or ' + PathName.json)
 
 # List of downloaded CSV filenames (http://bit.ly/2Lh4qzF)
-csvFileList = []
+csv_file_list = []
 ################
 try:
-    csvFileList = [f for f in os.listdir(PathName.csv) \
+    csv_file_list = [f for f in os.listdir(PathName.csv) \
                      if os.path.isfile(PathName.csv + f) and not f.startswith('.')]
 except FileNotFoundError:
     handleFileNotFoundError(PathName.csv)
 
-csvFileList.sort()
+csv_file_list.sort()
 
 # Column names to be extracted
 colName = [ \
@@ -131,14 +141,14 @@ colName = [ \
     'StatusD', None, None, \
     'StatusN', None, None]
 
-# colExtractList = [1,6,11,14,18,22,25,36,39,42,45,48]
-colExtractList = []  # automatically build the list of columns to be extracted
-colCountList   = []  # keep the count of valid data in each column
+# col_extract_list = [1,6,11,14,18,22,25,36,39,42,45,48]
+col_extract_list = []  # automatically build the list of columns to be extracted
+col_cnt_list     = []  # keep the count of valid data in each column
 ################## #
 for cx in range(1, len(colName)):  # exclude the 'Date' column at the index 0
     if colName[cx] is not None:
-        colExtractList.append(cx)
-        colCountList.append(0)
+        col_extract_list.append(cx)
+        col_cnt_list.append(0)
 
 def getFSize(size):
     if size < 1024:
@@ -159,10 +169,10 @@ def JMAMain(csvName):
     # Metadata in the output JSON file
     fname  = (csvName.split('.'))[0].split('-')
     locDF  = fname[0]  # location Data from Filename
-    yearDF = fname[1]  # year Data from Filename
+    yearDF = fname[1]  # year from Data Filename
 
     # slice for old data
-    colExtList = colExtractList if int(yearDF) > 1960 else colExtractList[:4]
+    colExtList = col_extract_list if int(yearDF) > 1960 else col_extract_list[:4]
 
     def getColName(col):
         return colName[colExtList[col]]
@@ -178,8 +188,11 @@ def JMAMain(csvName):
     def isCompactFormat(itemName):
         return itemName == 'c'
 
-    def filter0(v):   ## nullify '0'
-        return '' if v == '0' else v
+    def filter0(v, cx):   ## nullify '0'
+        if cx in [14, 25]:  # column: Rain, Snow
+            return '' if v == '0' else v
+        else:
+            return v
 
     def isEmptyArray(arr):  ## check if the array is empty
         for v in arr:
@@ -203,6 +216,8 @@ def JMAMain(csvName):
     ###### Data store per date
     rowDataList = []      # two-dimmensional array (per year)
     yearsList = []
+    date_from = ''
+    date_to   = ''
 
     def WriteListJson(itemName, dataList, year=yearDF):
         fnJson = getFullPathOut(itemName, year)
@@ -219,10 +234,11 @@ def JMAMain(csvName):
         except FileNotFoundError:
             handleFileNotFoundError(fnTemp)
 
-        meta = '{"meta":{"location":"' + locDF \
-             + '","year":' + year  \
-             + ',"item":"' + (getCompactColNames() if isCompactFormat(itemName) else itemName) \
-             + '"},\n'
+        meta = '{"meta":{"location":"' + locDF   \
+                     + '","from":"' + date_from  \
+                     + '","to":"'   + date_to    \
+                     + '","item":"' + (getCompactColNames() if isCompactFormat(itemName) else itemName) \
+                     + '"},\n'
 
         try:
             # Output the JSON file with the meta data
@@ -255,37 +271,44 @@ def JMAMain(csvName):
     # Read CSV file
     print(Deco.csvIcon, ' Data Source:', getCsvPath())
     daysJson = 0
-    with open(getCsvPath(), 'r') as cf:
-        inData = csv.reader(cf, delimiter=',')
-        ''' Process CSV data
-        1. Save to colDataList[c] per column (i.e. per item) for each daily data
-        2. Save to rowDataList[y] every column per day combining to a compact form, per year list '''
-        yrId   = 0  # index for the yearly list
-        for row in inData:
-            if '/' not in row[0]:   # skip header part (that has no date)
-                continue
-            s = ''
-            for c, cx in enumerate(colExtList):
-                if row[cx] != '':
-                    colCountList[c] += 1
-                colDataList[c].append(filter0(row[cx]))
-                if c > 0:
-                    s += '|'             # compact form delimiter
-                if row[cx] is not '0':
-                    s += row[cx]
-            if row[0].endswith('/1/1'):  # start date of the year
-                rowDataList.append([])   # initialize new rowData for the new year
-                yearsList.append(row[0][:4])
-                yrId  += 1
-                print(Deco.yearIcon, yearsList[len(yearsList)-1], end='')  # print out the year
-            rowDataList[yrId-1].append(s)
-            daysJson += 1
+    try:
+        with open(getCsvPath(), 'r', encoding='utf-8') as cf:
+            inData = csv.reader(cf, delimiter=',')
+            ''' Process CSV data
+            1. Save to colDataList[c] per column (i.e. per item) for each daily data
+            2. Save to rowDataList[y] every column per day combining to a compact form, per year list '''
+            yrId = -1  # index for the yearly list
+            for row in inData:
+                if ('/' not in row[0]) or (not row[0][:4].isnumeric()):   # skip header part (that has no date)
+                    continue
+                s = ''
+                date_to = row[0][:10]  # to save out of the loop, ex: 2018/12/20
+                for c, cx in enumerate(colExtList):
+                    if row[cx] != '':
+                        col_cnt_list[c] += 1
+                    val = filter0(row[cx], cx)
+                    colDataList[c].append(val)
+                    if c > 0:
+                        s += '|'             # compact form delimiter
+                    if val is not '':
+                        s += row[cx]
+                if (daysJson == 0) or (row[0].endswith('/1/1')):  # start date of the year
+                    if (daysJson == 0):
+                        date_from = date_to
+                    rowDataList.append([])   # initialize new rowData for the new year
+                    yearsList.append(date_to[:4])
+                    yrId  += 1
+                    print(Deco.yearIcon, yearsList[len(yearsList)-1], end='')  # print out the year
+                rowDataList[yrId].append(s)
+                daysJson += 1
+    except UnicodeDecodeError:
+        handleCriticalError('UnicodeDecodeError')
     print('->Total', daysJson, 'days (', getYears(daysJson), ')')
 
     szColJson = 0
     szRowJson = 0
     for col in range(len(colExtList)):
-        if colCountList[col] > 0:
+        if col_cnt_list[col] > 0:
             szColJson += WriteListJson(getColName(col), colDataList[col])
     print(Deco.sizeHeadC, getFSize(szColJson), ' in total.')
 
@@ -296,11 +319,11 @@ def JMAMain(csvName):
     return szColJson, szRowJson, daysJson   # construct a tuple
 
 #######################################################################
-print(Deco.startIcon, 'TMA Data - Column IDs to be extracted:', colExtractList, '(', len(colName), 'columns)')
+print(Deco.startIcon, 'TMA Data - Column IDs to be extracted:', col_extract_list, '(', len(colName), 'columns)')
 szColTotal = 0
 szRowTotal = 0
 daysTotal  = 0
-for fn in csvFileList:
+for fn in csv_file_list:
     szC, szR, d = JMAMain(fn)
     szColTotal += szC
     szRowTotal += szR
