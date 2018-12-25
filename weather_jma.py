@@ -11,6 +11,7 @@ import os
 import calendar
 
 import c2j_util as cj
+import print_color as pc   ## replace with print_no_color if you don't need a colorful report
 
 '''
 # Google Python Style Guide: https://google.github.io/styleguide/pyguide.html (snake_case)
@@ -45,7 +46,7 @@ https://www.data.jma.go.jp/gmd/risk/obsdl/index.php
 天気概況(昼：06時～18時)       StD  45  since 1967/1/1
 天気概況(夜：18時～翌日06時)   StN  48
 ------------------------------------------
-* 0->null: To save space, convert 0 to null
+* 0->null: To save space, convert 0 to null --> not working
 
 Required Files (downloaded from 気象庁JMA)
 -----------------------------------------------
@@ -191,19 +192,20 @@ def jma_main(csv_name):
             print(fn_tmp, ' - File not exist')
 
         sz_json = os.path.getsize(fn_json)    # ternary operator
-        print(cj.Deco.rowIcon if is_compact(item_name) else cj.Deco.colIcon, \
-              fn_json, ' (', cj.file_size(sz_json), ') ', end='')
+        print(cj.Deco.rowIcon+pc.CBLUE if is_compact(item_name) else cj.Deco.colIcon+pc.CGREEN, \
+              fn_json, pc.CEND, ' (', cj.file_size(sz_json), ') ', end='')
         if is_compact(item_name):
             days_year = 366 if calendar.isleap(int(date_fr[:4])) else 365
             print(len(data_lst), 'days ', \
                   cj.Deco.LeapYear if (days_year == 366) else cj.Deco.NoLeap,  \
-                  cj.Deco.warning + 'Incomplete data!' if (len(data_lst) != days_year) else '')
+                  cj.Deco.warning + pc.CRED + 'Incomplete data!' + pc.CEND \
+                  if (len(data_lst) != days_year) else '')
         else:
             print(cj.Deco.tabs, cj.get_years(len(data_lst)))
         return sz_json
 
     # Read CSV file
-    print(cj.Deco.csvIcon, ' Data Source:', cj.PathName.csv + csv_name)
+    print(cj.Deco.csvIcon, ' Data Source:', pc.CBLACK+pc.CYELLOWBG, cj.PathName.csv + csv_name, pc.CEND)
     ###### Data store per column
     col_data_lst = []  # two-dimensional array
     for c in range(len(col_x_lst)):
@@ -249,8 +251,8 @@ def jma_main(csv_name):
                     date_to[yrId] = row[0][:10]  # to save out of the loop, ex: 2018/12/20
                 row_data_lst[yrId].append(s)
                 days_count += 1
-    except Unicodecj.Deco.eError:
-        cj.handleCriticalError('Unicodecj.Deco.eError')
+    except UnicodeDecodeError:
+        cj.handleCriticalError('UnicodeDecodeError')
     print('->Total', days_count, 'days (', cj.get_years(days_count), ')')
 
     sz_col_j = 0
@@ -284,10 +286,11 @@ for fn in CF.get_csv_list():
     sz_row_total += sz_r
     days_total   += d
 ## REPORT statistics
-print(cj.Deco.totalHead, 'Column-wise   data:', cj.file_size(sz_col_total), 'in total.')
-print(cj.Deco.totalHead, 'Daily compact data:', cj.file_size(sz_row_total), 'in total.', \
+print(cj.Deco.totalHead, 'Column-wise   data:', pc.CGREEN, cj.file_size(sz_col_total), pc.CEND, 'in total.')
+print(cj.Deco.totalHead, 'Daily compact data:', pc.CBLUE,  cj.file_size(sz_row_total), pc.CEND, 'in total.', \
       round(sz_row_total/days_total, 1), 'bytes/day (', \
       cj.file_size(sz_row_total*365.25/days_total), '/year) in average.')
-print(cj.Deco.totalHead, days_total, ' days (', cj.get_years(days_total), ') in total.')
+print(cj.Deco.totalHead, days_total, ' days (', \
+      pc.CYELLOW, cj.get_years(days_total), pc.CEND, ') in total.')
 
 ## End of program

@@ -1,6 +1,8 @@
 """CSV to JSON utilities"""
 # Soomin K., Dec, 2018
 import os
+import print_color as pc
+
 class Deco:
     """Decorative icons and messages"""
     error     = '⚠️ '
@@ -12,13 +14,13 @@ class Deco:
     yearIcon  = '☀️'
     LeapYear  = '🌔'
     NoLeap    = '🌘'
-    success   = 'SUCCESS!💋'
+    success   = pc.CBLACK_YELLOWBG + 'SUCCESS!💋' + pc.CEND
     tabs      = '...........'
-    sizeHeadC = '.....................................................>'
-    sizeHeadR = '----------------------------------------------------->'
+    sizeHeadC = '.........................................................>'
+    sizeHeadR = '--------------------------------------------------------->'
     totalHead = '==>'
-    line_top  = '======================================================'
-    line_bot  = '------------------------------------------------------'
+    line_top  = '=========================================================='
+    line_bot  = '----------------------------------------------------------'
 
 class PathName:   # directory names for the data files
     csv  = 'dataCSV/'
@@ -39,7 +41,7 @@ def file_size(size):
     elif size < 1024*1024:
         return str(round(size/1024, 1)) + ' KB'
     elif size < 1024*1024*1024:
-        return str(round(size/1024/1024, 3)) + ' MB'
+        return str(round(size/1024/1024, 2)) + ' MB'
     else:
         return str(round(size/1024/1024/1024, 3)) + ' GB'
 
@@ -72,3 +74,33 @@ def json_meta_obj(location, from_date, to_date, item):
 def json_data_obj(str_data):
     """JSON data object for JMA weather data"""
     return '"data":' + str_data + '}'
+
+def get_statistics(data):
+    """get min, max, average of the given data, ignoring None type errors"""
+    v_min = None
+    v_max = None
+    v_avg = None
+    v     = None
+    v_sum = .0
+    count = 0
+    for d in data:
+        if d is None:
+            continue
+        try:
+            v = float(d)
+        except ValueError:
+            print(pc.CRED, d, pc.CEND, end=',')
+            continue
+        if count == 0:
+            v_min = v
+            v_max = v
+        else:
+            if v < v_min:
+                v_min = v
+            if v > v_max:
+                v_max = v
+        v_sum += v
+        count += 1
+    if count > 0:
+        v_avg = round(v_sum/count, 2)
+    return v_min, v_max, v_avg

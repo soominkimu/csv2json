@@ -9,6 +9,7 @@ import os
 import glob     # Unix style pathname pattern expansion
 
 import c2j_util as cj
+import print_color as pc   ## replace with print_no_color if you don't need a colorful report
 
 ########################### INPUT OPTIONS
 SOURCE_LOCATIONS = ['tokyo']
@@ -35,9 +36,21 @@ def merge_json(src_loc, src_item):
     FILE_MERGED    = cj.PathName.json + 'M_' + src_loc + '-' + src_item + '.json'
     ## N.B. The resulting merged file should not fall into the same filename pattern!
     print(cj.Deco.line_top)
-    print('Merging JSON files:', FILES_TO_MERGE, '=>', FILE_MERGED)
+    print('Merging JSON files:', \
+          pc.CYELLOW,            FILES_TO_MERGE, pc.CEND, '=>', \
+          pc.CBLACK+pc.CGREENBG, FILE_MERGED,    pc.CEND)
     print(cj.Deco.line_bot)
     JF = JsonFile(FILES_TO_MERGE)  #### Specify the filename pattern of the files to merge
+
+    def print_statistics(head, data):
+        if src_item != 'c':
+            v_min, v_max, v_avg = cj.get_statistics(data)
+            print(pc.CGREY + head + pc.CEND, \
+                  pc.CYELLOW, v_min, pc.CGREY + '~' + pc.CEND, \
+                  pc.CBLUE,   v_max, \
+                  pc.CGREEN,  v_avg, pc.CEND)
+        else:
+            print('')
 
     ## string type is immutable
     j_dict_data = []
@@ -54,10 +67,14 @@ def merge_json(src_loc, src_item):
             j_dict_data += j_dict['data']
             files_count += 1
             print(cj.Deco.yearIcon, files_count, \
-                  j_d_m['location'], j_d_m['from'], '~', j_d_m['to'], j_d_m['item'])
+                  j_d_m['location'], j_d_m['from'], '~', j_d_m['to'], \
+                  pc.CGREY, j_d_m['item'], pc.CEND, end='')
+            print_statistics(':', j_dict['data'])
 
     lines_total = len(j_dict_data)
-    print(cj.Deco.colIcon, lines_total, 'lines of data')
+    print(pc.CGREY, cj.Deco.line_bot, pc.CEND)
+    print(cj.Deco.colIcon, lines_total, 'lines of data', end='')
+    print_statistics(' ==============>', j_dict_data)
 
     str_data = json.dumps(j_dict_data, separators=(',', ':'))
 
@@ -67,7 +84,7 @@ def merge_json(src_loc, src_item):
 
     sz_json = os.path.getsize(FILE_MERGED)
     print(cj.Deco.rowIcon, FILES_TO_MERGE, '(', files_count, 'files) merged into =>', \
-          FILE_MERGED, '(', cj.file_size(sz_json), ')')
+          FILE_MERGED, '(', pc.CYELLOW, cj.file_size(sz_json), pc.CEND, ')')
 
     ## Verify the validity of the generated JSON file
     with open(FILE_MERGED) as jf:
