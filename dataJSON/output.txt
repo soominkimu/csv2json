@@ -1,0 +1,303 @@
+🌦  TMA Data - Column IDs to be extracted: [1, 6, 11, 14, 18, 22, 25, 36, 39, 42] ( 43 columns)
+🌡  Data Source:  dataCSV/tokyo-1876.csv 
+☀️ 1876☀️ 1877☀️ 1878☀️ 1879☀️ 1880->Total 1827 days ( 5.0 years )
+📚 dataJSON/tokyo-Max-1876.json   ( 8.5 KB ) ........... 5.0 years
+📚 dataJSON/tokyo-Min-1876.json   ( 8.3 KB ) ........... 5.0 years
+📚 dataJSON/tokyo-Avg-1876.json   ( 8.2 KB ) ........... 5.0 years
+📚 dataJSON/tokyo-Ran-1876.json   ( 5.2 KB ) ........... 5.0 years
+.........................................................> 30.1 KB  in total.
+📕 dataJSON/tokyo-c-1876.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1877.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1878.json   ( 6.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1879.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1880.json   ( 6.6 KB ) 366 days  🌔 
+---------------------------------------------------------> 32.7 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1881.csv 
+☀️ 1881☀️ 1882☀️ 1883☀️ 1884☀️ 1885☀️ 1886☀️ 1887☀️ 1888☀️ 1889☀️ 1890->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1881.json   ( 16.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1881.json   ( 16.4 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1881.json   ( 15.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1881.json   ( 10.2 KB ) ........... 10.0 years
+.........................................................> 59.4 KB  in total.
+📕 dataJSON/tokyo-c-1881.json   ( 6.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1882.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1883.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1884.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1885.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1886.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1887.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1888.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1889.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1890.json   ( 6.6 KB ) 365 days  🌘 
+---------------------------------------------------------> 65.0 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1891.csv 
+☀️ 1891☀️ 1892☀️ 1893☀️ 1894☀️ 1895☀️ 1896☀️ 1897☀️ 1898☀️ 1899☀️ 1900->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1891.json   ( 16.6 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1891.json   ( 15.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1891.json   ( 15.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1891.json   ( 10.2 KB ) ........... 10.0 years
+.........................................................> 58.7 KB  in total.
+📕 dataJSON/tokyo-c-1891.json   ( 6.3 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1892.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1893.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1894.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1895.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1896.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1897.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1898.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1899.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1900.json   ( 6.4 KB ) 365 days  🌘 
+---------------------------------------------------------> 64.3 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1901.csv 
+☀️ 1901☀️ 1902☀️ 1903☀️ 1904☀️ 1905☀️ 1906☀️ 1907☀️ 1908☀️ 1909☀️ 1910->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1901.json   ( 16.4 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1901.json   ( 16.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1901.json   ( 15.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1901.json   ( 10.4 KB ) ........... 10.0 years
+.........................................................> 58.7 KB  in total.
+📕 dataJSON/tokyo-c-1901.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1902.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1903.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1904.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1905.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1906.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1907.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1908.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1909.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1910.json   ( 6.5 KB ) 365 days  🌘 
+---------------------------------------------------------> 64.4 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1911.csv 
+☀️ 1911☀️ 1912☀️ 1913☀️ 1914☀️ 1915☀️ 1916☀️ 1917☀️ 1918☀️ 1919☀️ 1920->Total 3653 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1911.json   ( 16.4 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1911.json   ( 16.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1911.json   ( 16.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1911.json   ( 10.4 KB ) ........... 10.0 years
+.........................................................> 59.0 KB  in total.
+📕 dataJSON/tokyo-c-1911.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1912.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1913.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1914.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1915.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1916.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1917.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1918.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1919.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1920.json   ( 6.5 KB ) 366 days  🌔 
+---------------------------------------------------------> 64.6 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1921.csv 
+☀️ 1921☀️ 1922☀️ 1923☀️ 1924☀️ 1925☀️ 1926☀️ 1927☀️ 1928☀️ 1929☀️ 1930->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1921.json   ( 16.6 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1921.json   ( 16.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1921.json   ( 15.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1921.json   ( 10.2 KB ) ........... 10.0 years
+.........................................................> 58.9 KB  in total.
+📕 dataJSON/tokyo-c-1921.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1922.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1923.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1924.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1925.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1926.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1927.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1928.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1929.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1930.json   ( 6.4 KB ) 365 days  🌘 
+---------------------------------------------------------> 64.5 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1931.csv 
+☀️ 1931☀️ 1932☀️ 1933☀️ 1934☀️ 1935☀️ 1936☀️ 1937☀️ 1938☀️ 1939☀️ 1940->Total 3653 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1931.json   ( 16.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1931.json   ( 16.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1931.json   ( 16.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1931.json   ( 10.1 KB ) ........... 10.0 years
+.........................................................> 58.8 KB  in total.
+📕 dataJSON/tokyo-c-1931.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1932.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1933.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1934.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1935.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1936.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1937.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1938.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1939.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1940.json   ( 6.4 KB ) 366 days  🌔 
+---------------------------------------------------------> 64.3 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1941.csv 
+☀️ 1941☀️ 1942☀️ 1943☀️ 1944☀️ 1945☀️ 1946☀️ 1947☀️ 1948☀️ 1949☀️ 1950->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1941.json   ( 16.6 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1941.json   ( 16.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1941.json   ( 16.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1941.json   ( 10.2 KB ) ........... 10.0 years
+.........................................................> 58.8 KB  in total.
+📕 dataJSON/tokyo-c-1941.json   ( 6.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1942.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1943.json   ( 6.3 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1944.json   ( 6.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1945.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1946.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1947.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1948.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1949.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1950.json   ( 6.5 KB ) 365 days  🌘 
+---------------------------------------------------------> 64.3 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1951.csv 
+☀️ 1951☀️ 1952☀️ 1953☀️ 1954☀️ 1955☀️ 1956☀️ 1957☀️ 1958☀️ 1959☀️ 1960->Total 3653 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1951.json   ( 16.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1951.json   ( 15.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1951.json   ( 16.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1951.json   ( 10.4 KB ) ........... 10.0 years
+.........................................................> 59.1 KB  in total.
+📕 dataJSON/tokyo-c-1951.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1952.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1953.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1954.json   ( 6.5 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1955.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1956.json   ( 6.5 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1957.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1958.json   ( 6.4 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1959.json   ( 6.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1960.json   ( 6.5 KB ) 366 days  🌔 
+---------------------------------------------------------> 64.7 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1961.csv 
+☀️ 1961☀️ 1962☀️ 1963☀️ 1964☀️ 1965☀️ 1966☀️ 1967☀️ 1968☀️ 1969☀️ 1970->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1961.json   ( 16.6 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1961.json   ( 15.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1961.json   ( 16.1 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1961.json   ( 9.4 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlT-1961.json   ( 13.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlE-1961.json   ( 15.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Snw-1961.json   ( 7.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Wnd-1961.json   ( 13.6 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Hmd-1961.json   ( 10.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Cld-1961.json   ( 11.9 KB ) ........... 10.0 years
+.........................................................> 130.3 KB  in total.
+📕 dataJSON/tokyo-c-1961.json   ( 13.3 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1962.json   ( 13.3 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1963.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1964.json   ( 13.2 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1965.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1966.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1967.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1968.json   ( 13.2 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1969.json   ( 13.0 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1970.json   ( 12.3 KB ) 365 days  🌘 
+---------------------------------------------------------> 130.9 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1971.csv 
+☀️ 1971☀️ 1972☀️ 1973☀️ 1974☀️ 1975☀️ 1976☀️ 1977☀️ 1978☀️ 1979☀️ 1980->Total 3653 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1971.json   ( 16.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1971.json   ( 15.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1971.json   ( 16.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1971.json   ( 8.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlT-1971.json   ( 13.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlE-1971.json   ( 15.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Snw-1971.json   ( 7.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Wnd-1971.json   ( 13.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Hmd-1971.json   ( 10.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Cld-1971.json   ( 12.0 KB ) ........... 10.0 years
+.........................................................> 130.0 KB  in total.
+📕 dataJSON/tokyo-c-1971.json   ( 11.8 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1972.json   ( 12.8 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1973.json   ( 13.0 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1974.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1975.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1976.json   ( 13.1 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1977.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1978.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1979.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1980.json   ( 13.2 KB ) 366 days  🌔 
+---------------------------------------------------------> 129.6 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1981.csv 
+☀️ 1981☀️ 1982☀️ 1983☀️ 1984☀️ 1985☀️ 1986☀️ 1987☀️ 1988☀️ 1989☀️ 1990->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1981.json   ( 16.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1981.json   ( 15.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1981.json   ( 16.1 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1981.json   ( 8.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlT-1981.json   ( 12.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlE-1981.json   ( 15.6 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Snw-1981.json   ( 7.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Wnd-1981.json   ( 13.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Hmd-1981.json   ( 10.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Cld-1981.json   ( 12.0 KB ) ........... 10.0 years
+.........................................................> 129.8 KB  in total.
+📕 dataJSON/tokyo-c-1981.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1982.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1983.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1984.json   ( 13.2 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1985.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1986.json   ( 13.0 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1987.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1988.json   ( 13.1 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1989.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1990.json   ( 13.2 KB ) 365 days  🌘 
+---------------------------------------------------------> 131.3 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-1991.csv 
+☀️ 1991☀️ 1992☀️ 1993☀️ 1994☀️ 1995☀️ 1996☀️ 1997☀️ 1998☀️ 1999☀️ 2000->Total 3653 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-1991.json   ( 16.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-1991.json   ( 15.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-1991.json   ( 16.3 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-1991.json   ( 8.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlT-1991.json   ( 13.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlE-1991.json   ( 15.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Snw-1991.json   ( 7.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Wnd-1991.json   ( 13.7 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Hmd-1991.json   ( 10.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Cld-1991.json   ( 12.0 KB ) ........... 10.0 years
+.........................................................> 130.4 KB  in total.
+📕 dataJSON/tokyo-c-1991.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1992.json   ( 13.2 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1993.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1994.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1995.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1996.json   ( 13.2 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-1997.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1998.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-1999.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2000.json   ( 13.2 KB ) 366 days  🌔 
+---------------------------------------------------------> 131.8 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-2001.csv 
+☀️ 2001☀️ 2002☀️ 2003☀️ 2004☀️ 2005☀️ 2006☀️ 2007☀️ 2008☀️ 2009☀️ 2010->Total 3652 days ( 10.0 years )
+📚 dataJSON/tokyo-Max-2001.json   ( 16.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Min-2001.json   ( 15.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Avg-2001.json   ( 16.3 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Ran-2001.json   ( 8.9 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlT-2001.json   ( 13.0 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-SlE-2001.json   ( 16.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Snw-2001.json   ( 7.2 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Wnd-2001.json   ( 13.6 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Hmd-2001.json   ( 10.8 KB ) ........... 10.0 years
+📚 dataJSON/tokyo-Cld-2001.json   ( 12.1 KB ) ........... 10.0 years
+.........................................................> 131.4 KB  in total.
+📕 dataJSON/tokyo-c-2001.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2002.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2003.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2004.json   ( 13.3 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-2005.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2006.json   ( 13.1 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2007.json   ( 13.2 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2008.json   ( 13.4 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-2009.json   ( 13.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2010.json   ( 13.6 KB ) 365 days  🌘 
+---------------------------------------------------------> 132.8 KB  in total.  [30m[43mSUCCESS!💋[0m
+🌡  Data Source:  dataCSV/tokyo-2011.csv 
+☀️ 2011☀️ 2012☀️ 2013☀️ 2014☀️ 2015☀️ 2016☀️ 2017☀️ 2018->Total 2914 days ( 7.98 years )
+📚 dataJSON/tokyo-Max-2011.json   ( 13.4 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-Min-2011.json   ( 12.7 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-Avg-2011.json   ( 12.9 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-Ran-2011.json   ( 7.1 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-SlT-2011.json   ( 10.6 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-SlE-2011.json   ( 15.9 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-Snw-2011.json   ( 5.8 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-Wnd-2011.json   ( 10.8 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-Hmd-2011.json   ( 8.6 KB ) ........... 7.98 years
+📚 dataJSON/tokyo-Cld-2011.json   ( 9.5 KB ) ........... 7.98 years
+.........................................................> 107.5 KB  in total.
+📕 dataJSON/tokyo-c-2011.json   ( 13.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2012.json   ( 13.6 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-2013.json   ( 13.7 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2014.json   ( 13.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2015.json   ( 13.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2016.json   ( 13.6 KB ) 366 days  🌔 
+📕 dataJSON/tokyo-c-2017.json   ( 13.6 KB ) 365 days  🌘 
+📕 dataJSON/tokyo-c-2018.json   ( 13.4 KB ) 357 days  🌘 🚨Incomplete data!
+---------------------------------------------------------> 108.5 KB  in total.  [30m[43mSUCCESS!💋[0m
+==> Column-wise   data:  1.23 MB  in total.
+==> Daily compact data:  1.28 MB  in total. 25.8 bytes/day ( 9.2 KB /year) in average.
+==> 52222  days (  142.98 years  ) in total.
