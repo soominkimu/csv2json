@@ -165,7 +165,7 @@ def jma_main(csv_name):
         fn_json = cj.get_fullpath_json(loc_df, item_name, date_fr[:4])
         # Create a temp file to remove all the quotation characters in the JSON file
         ''' Unwanted quotation marks added when json.dump was called.
-        Since I couldn't find easy way to prevent this behavior added a post process after dumping.
+        Since I couldn't find easy way to prevent this behavior, added a post process after dumping.
         Dump a temporary Json file and then apply some filters.  '''
         fn_tmp = fn_json + '.temp'
         try:
