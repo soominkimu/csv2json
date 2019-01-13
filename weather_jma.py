@@ -10,7 +10,7 @@ import json
 import os
 import calendar
 
-import c2j_util as cj
+import c2j_util    as cj
 import print_color as pc   ## replace with print_no_color if you don't need a colorful report
 
 '''

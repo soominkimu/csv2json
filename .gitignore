@@ -5,4 +5,4 @@ dataCSV/*
 dataJSON/*
 !dataCSV/tokyo-2*
 !dataJSON/*.txt
-.swp
+*.swp
