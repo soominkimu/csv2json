@@ -1,7 +1,7 @@
 """CSV to JSON utilities"""
 # Soomin K., Dec, 2018
 import os
-import print_color as pc
+import util.print_color as pc
 
 class Deco:
     """Decorative icons and messages"""
