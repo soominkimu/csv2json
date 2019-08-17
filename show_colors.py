@@ -1,4 +1,4 @@
-import print_color as pc
+import util.print_color as pc
 
 print(pc.CBOLD,     "CBOLD     ", pc.CEND, pc.CRED,    "CRED   ", pc.CRED2,    "CRED2",    pc.CEND)
 print(pc.CITALIC,   "CITALIC   ", pc.CEND, pc.CGREEN,  "CGREEN ", pc.CGREEN2,  "CGREEN2",  pc.CEND)
