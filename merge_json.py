@@ -55,8 +55,8 @@ def merge_json(src_loc, src_item):
     ## string type is immutable
     j_dict_data = []
     files_count = 0
-    for fn in JF.json_list:
-        with open(fn) as jf:
+    for fN in JF.json_list:
+        with open(fN) as jf:
             j_dict = json.load(jf)    # dict object, data['data'] is a list
             j_d_m  = j_dict['meta']
             if files_count == 0:
@@ -78,17 +78,17 @@ def merge_json(src_loc, src_item):
 
     str_data = json.dumps(j_dict_data, separators=(',', ':'))
 
-    with open(FILE_MERGED, 'w') as f:
-        f.write(cj.json_meta_obj(m_loc, m_from, m_to, m_item))
-        f.write(cj.json_data_obj(str_data))
+    with open(FILE_MERGED, 'w') as fW:
+        fW.write(cj.json_meta_obj(m_loc, m_from, m_to, m_item))
+        fW.write(cj.json_data_obj(str_data))
 
     sz_json = os.path.getsize(FILE_MERGED)
     print(cj.Deco.rowIcon, FILES_TO_MERGE, '(', files_count, 'files) merged into =>', \
           FILE_MERGED, '(', pc.CYELLOW, cj.file_size(sz_json), pc.CEND, ')')
 
     ## Verify the validity of the generated JSON file
-    with open(FILE_MERGED) as jf:
-        j_dict = json.load(jf)
+    with open(FILE_MERGED) as fJ:
+        j_dict = json.load(fJ)
         print(cj.Deco.totalHead, 'meta:', j_dict['meta'])
         if lines_total == len(j_dict['data']):
             print(cj.Deco.success, 'JSON check ok!')
