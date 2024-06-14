@@ -1,8 +1,6 @@
 .DS_Store
 __*
 bak/*
-dataCSV/*
 dataJSON/*
-!dataCSV/tokyo-2*
 !dataJSON/*.txt
 *.swp
