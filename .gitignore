@@ -3,7 +3,6 @@ __*
 bak/*
 dataCSV/*
 dataJSON/*
-misc-data/*
 !dataCSV/tokyo-2*
 !dataJSON/*.txt
 *.swp
